@@ -36,12 +36,12 @@ aside {
     width: 260px;
 }
 
-aside, h3 {
+aside h3 {
     font-size: 14px;
     margin-top: 0;
 }
 
-aside, ol {
+aside ol {
     font-size: 12px;
 }
 
@@ -54,17 +54,17 @@ article {
     padding: 10px;
 }
 
-article, h2 {
+article h2 {
     border-bottom: 1px dashed #7E9F19;
     margin: 0;
 }
 
-article, a {
+article a {
     color: #2C88A7;
     font-weight: bold;
 }
 
-article, img {
+article img {
     border: 1px solid #7E9F19;
     float: left;
     margin: 10px 10px 0 0;
