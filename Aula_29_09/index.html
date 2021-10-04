@@ -7,11 +7,20 @@
     <title>Atv</title>
 </head>
 <body>
-    <form method="POST" action="processo.php">
-        Linhas: <input type="number" name="linha"/> <br/>
-        Colunas: <input type="number" name="coluna"/> <br/>
-        Qant/Página : <input type="number" name="qnt_por_pagina"/><br/>
-        <button>Gerar</button>
+     <form action="processo.php" method="POST">
+
+        <label for="linhas">Linhas</label>
+        <input type="number" name="linha" id="linha"></br>
+        
+        <label for="colunas">Colunas</label>
+        <input type="number" name="coluna" id="coluna"></br>
+
+        <label for="Paginas">Pagina</label>
+        <input type="number" name="Qntpagina" id="pagina"></br>
+
+
+        <input type="submit" value="Enviar">
+
     </form>
 </body>
 </html>

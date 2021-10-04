@@ -1,33 +1,40 @@
 <?php
-        $iLinha = isset($_POST['linha']) ? $_POST['linha'] : 'ERRO';   
-        $iColuna = isset ($_POST['coluna']) ? $_POST['coluna'] : 'ERRO';
-        for ($i = 0; $i < $iLinha; $i++) {
-            for($j = 0; $j <= $iColuna; $j++) {
-                $aArray[$i][$j] = rand(0, 100);
-            }
+
+const VALOR_FIXO = 1000;
+
+    $iLinha = isset($_POST['linha']) ? $_POST['linha'] : null;   
+    $iColuna = isset ($_POST['coluna']) ? $_POST['coluna'] : null;
+    $iQuntPorPagina = isset($_POST['qnt_por_pagina']) ? $_POST['qnt_por_pagina'] : null;
+        
+    $aVetor = [];
+
+    for ($i = 0; $i < VALOR_FIXO; $i++) {
+        for($j = 0; $j < $iColuna; $j++) {
+            $aVetor[$i][$j] = rand(1, 1000);
         }
+    }
 
 
-        echo '<table border="1">';
-            $valor = $_POST['qnt_por_pagina'] * 10;
-            $fim    = ($valor == 10) ? $fim    = 9 : $fim = $valor - 1;
-            $inicio = ($valor == 10) ? $inicio = 0 : $fim - 9;
 
-            for ($i = $inicio; $i <= $fim; $i++) {
-            echo '<tr>';
-                echo "<td>{$i}</td>";
-                for($j = 0; $j <= $iColuna; $j++) {
-                    echo '<td>';
-                    echo $aArray[$i][$j]. ' ';
-                    echo '</td>';
-                }      
-            echo '</tr>';  
-            }     
+    echo '<table border="1">';
           
-        echo '</table>';
+     for ($i = (($iQuntPorPagina * $iLinha) - $iLinha); $i < $iLinha * $iQuntPorPagina; $i++) {
+        echo '<tr>';
+        for($j = 0; $j < $iColuna; $j++) {
+            echo '<td>';
+            echo $i;
+            echo '</td>';
+            echo '<td>';
+            echo $aVetor[$i][$j];
+            echo '</td>';
+        }      
+    echo '</tr>';  
+    }     
+          
+    echo '</table>';
 
-        //links
-        for ($i = 1; $i <= ($iLinha/10); $i++) {
-            echo "<a href=\"?qnt_por_pagina={$i}\">{$i}</a> ";
-        }
-    ?>
+    //links
+    for ($i = 1; $i <= VALOR_FIXO/$iLinha; $i++) {
+        echo "<a href='?qnt_por_pagina={$i}&coluna={$iColuna}&linha={$iLinha}'>{$i}</a> ";
+    }
+?>
