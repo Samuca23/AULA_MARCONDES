@@ -14,7 +14,7 @@ class html{
 
     function __toString()
     {
-        return "<html lang=" . $this->lang . "> " . $this->getHead() . $this->getBody() . "</html>";
+        return "<html lang=" . $this->lang . "> " . $this->getHead() . $this->getBody() . "</html>\n";
     }
 
     /**

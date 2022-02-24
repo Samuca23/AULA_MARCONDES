@@ -23,7 +23,7 @@ class meta{
         $oMeta .= !!$this->getHttpEquiv() ? " http-equiv=\"" . $this->getHttpEquiv() . "\" "  : '';
         $oMeta .= !!$this->getName() ? "name=\"" . $this->getName() . "\" " : '';
         $oMeta .= !!$this->getContent() ? "content=\"" . $this->getContent() . "\" " : '';
-        $oMeta .= ">";
+        $oMeta .= ">\n";
 
         return $oMeta;
     }

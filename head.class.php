@@ -12,7 +12,7 @@ class head{
             $retorno .= $meta;
         }
         $retorno .= $this->getTitle();
-        $retorno .=  "</head>";
+        $retorno .=  "</head>\n";
         return $retorno;
     }
 
