@@ -1,60 +1,71 @@
 <?php
 
+require_once('tr.class.php');
 class table{
-    private $tr;
+    private $titulo = [];
+    private $conteudo = [];
 
-    public function __construct($tr)
+    public function __construct($titulo, $conteudo)
     {
-        $this->tr = $tr;
+        $this->titulo = $titulo;
+        $this->conteudo = $conteudo;
     }
     public function __toString()
     {
+        $aConteudo = $this->getConteudo();
+        array_unshift($aConteudo, $this->getTitulo());
         $retorno = "<table>\n";
-        $retorno .= $this->tr;
+        foreach($aConteudo as $aLinha){
+            $aTd = [];
+            foreach($aLinha as $sConteudo){
+                $aTd[] = new Td($sConteudo);
+            }
+            $oTr = new Tr($aTd);
+            $retorno .= $oTr;
+        }
         $retorno .= "</table>\n";
-
-        return $retorno;
         
+        return $retorno;
     }
 
-
     /**
-     * Get the value of tr
-     */
-    public function getTr()
+     * Get the value of conteudo
+     */ 
+    public function getConteudo()
     {
-        return $this->tr;
+        return $this->conteudo;
     }
 
     /**
-     * Set the value of tr
+     * Set the value of conteudo
      *
      * @return  self
-     */
-    public function setTr($tr)
+     */ 
+    public function setConteudo($conteudo)
     {
-        $this->tr = $tr;
+        $this->conteudo = $conteudo;
 
         return $this;
     }
 
     /**
-     * Get the value of td
-     */
-    public function getTd()
+     * Get the value of titulo
+     */ 
+    public function getTitulo()
     {
-        return $this->td;
+        return $this->titulo;
     }
 
     /**
-     * Set the value of td
+     * Set the value of titulo
      *
      * @return  self
-     */
-    public function setTd($td)
+     */ 
+    public function setTitulo($titulo)
     {
-        $this->td = $td;
+        $this->titulo = $titulo;
 
         return $this;
     }
 }
+

@@ -1,38 +1,41 @@
 <?php
 
-class td{
-     private $item;
+class td
+{
+     private $conteudo;
 
-     public function __construct($item)
+     public function __construct($conteudo)
      {
-         $this->item = $item;
+          $this->conteudo = $conteudo;
      }
 
      public function __toString()
      {
-        $retorno = "<td>";
-        $retorno .= $this->item;
-        $retorno .= "</td>\n";
+          $retorno = "<td>\n";
+          $retorno .= $this->getConteudo();
+          $retorno .= "</td>\n";
 
-        return $retorno;
+          return $retorno;
      }
 
+
+
      /**
-      * Get the value of item
+      * Get the value of conteudo
       */
-     public function getItem()
+     public function getConteudo()
      {
-          return $this->item;
+          return $this->conteudo;
      }
 
      /**
-      * Set the value of item
+      * Set the value of conteudo
       *
       * @return  self
       */
-     public function setItem($item)
+     public function setConteudo($conteudo)
      {
-          $this->item = $item;
+          $this->conteudo = $conteudo;
 
           return $this;
      }
