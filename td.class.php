@@ -18,8 +18,6 @@ class td
           return $retorno;
      }
 
-
-
      /**
       * Get the value of conteudo
       */
