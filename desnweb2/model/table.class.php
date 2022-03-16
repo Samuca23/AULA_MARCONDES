@@ -14,7 +14,7 @@ class table{
     {
         $aConteudo = $this->getConteudo();
         array_unshift($aConteudo, $this->getTitulo());
-        $retorno = "<table>\n";
+        $retorno = "<table class='table table-dark'>\n";
         foreach($aConteudo as $aLinha){
             $aTd = [];
             foreach($aLinha as $sConteudo){

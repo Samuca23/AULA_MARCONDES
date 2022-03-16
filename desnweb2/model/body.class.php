@@ -3,11 +3,18 @@
 class body{
 
     private $body;
-    private $dado;
+    private $dado = [];
 
     function __toString()
     {
-        return "<body>\n" . $this->getDado() . "</body>\n";
+        $aDado = $this->getDado();
+        $retorno =  "<body>\n";
+        foreach($aDado as $oDado){
+            echo $oDado;
+        }
+        $retorno .="</body>\n";
+
+        return $retorno;
     }
 
     /**
