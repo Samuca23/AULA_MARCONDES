@@ -10,7 +10,7 @@ class body{
         $aDado = $this->getDado();
         $retorno =  "<body>\n";
         foreach($aDado as $oDado){
-            echo $oDado;
+            $retorno .= $oDado;
         }
         $retorno .="</body>\n";
 

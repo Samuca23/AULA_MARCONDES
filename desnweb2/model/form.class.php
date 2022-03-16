@@ -18,7 +18,7 @@ class form{
     {
         $retorno = "<form method=" . $this->getMethod() . " action=" . $this->getAction() . ">";
         foreach($this->getConteudo() as $oConteudo) {
-            echo $oConteudo;
+            $retorno .= $oConteudo;
         }
         $retorno .= "</form>";
 
